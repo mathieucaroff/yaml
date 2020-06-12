@@ -183,6 +183,8 @@ func (p *parser) node(kind Kind, defaultTag, tag, value string) *Node {
 	if !p.textless {
 		n.Line = p.event.start_mark.line + 1
 		n.Column = p.event.start_mark.column + 1
+		n.LineEnd = p.event.end_mark.line + 1
+		n.ColumnEnd = p.event.end_mark.column + 1
 		n.HeadComment = string(p.event.head_comment)
 		n.LineComment = string(p.event.line_comment)
 		n.FootComment = string(p.event.foot_comment)
